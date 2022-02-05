@@ -102,8 +102,10 @@ const stringReverse = (str) => {
 const statistics = (obj) => {
     return obj.reduce((init, cand) => {
         init[cand.votes_To] = (init[cand.votes_To] || 0) + 1
-        return init
+        return init;
     }, {})
+
+
 
 }
 
