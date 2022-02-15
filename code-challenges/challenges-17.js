@@ -15,8 +15,20 @@
 //
 
 const recursionPattern = (int1, int2) => {
-    // write your code here
+ 
+ let result =[];
+ result.push(int1)
+ if (result[0]==int1){
+     for (let i=int1-int2;i>0;i-=int2){
+         result.push(i)
+     }
+     result[result.length]=result[result.length-1]-int2
+   for (let j=result[result.length-1];j<int1;j+=int2){
+       result.push(j+int2)
+   }return result;
+ }
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -34,8 +46,9 @@ const recursionPattern = (int1, int2) => {
 // 
 
 const filterLinks = (str) => {
-    let result=(str.indexOf('www'),str.indexOf('>')-1);
-return str.substring(result)}
+   return str.substring(str.indexOf('www'),str.indexOf('>')-1)}
+ 
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -95,4 +108,4 @@ const samePattern = (str, arr) => {
 // -------------------------------------------------------------------------------------------------------
 
 
-module.exports = { recursionPattern, filterLinks, isPalindrome, samePattern };
+module.exports = { recursionPattern, filterLinks, isPalindrome, samePattern }
